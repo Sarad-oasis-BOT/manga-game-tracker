@@ -3,11 +3,33 @@ console.log(
 );
 let works =
     JSON.parse(localStorage.getItem("works"))
-    || [];const button = document.querySelector("button");
+    || [];
+
+const button = document.querySelector("button");
 const titleInput = document.getElementById("title");
 const categorySelect = document.getElementById("category");
 const statusSelect = document.getElementById("status");
 const list = document.getElementById("list");
+
+function renderWorks() {
+    list.innerHTML = "";
+
+    works.forEach(work => {
+        const item = document.createElement("div");
+
+        const text = document.createElement("span");
+        text.textContent =
+            `${work.title} (${work.category}) - ${work.status} `;
+
+        item.appendChild(text);
+
+        list.appendChild(item);
+    });
+}
+
+renderWorks();
+
+button.addEventListener("click", () => {
 
 button.addEventListener("click", () => {
     const title = titleInput.value;
@@ -32,19 +54,20 @@ button.addEventListener("click", () => {
     item.appendChild(text);
     item.appendChild(deleteButton);
 
-    works.push({
-        title: title,
-        category: category,
-        status: status
-    });
-
-    localStorage.setItem(
-        "works",
-        JSON.stringify(works)
-    );
-
-    list.appendChild(item);
-
-    titleInput.value = "";
+ works.push({
+    title: title,
+    category: category,
+    status: status
 });
+
+localStorage.setItem(
+    "works",
+    JSON.stringify(works)
+);
+
+renderWorks();
+
+titleInput.value = "";
+});
+
 console.log(works);
