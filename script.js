@@ -30,8 +30,6 @@ function renderWorks() {
 renderWorks();
 
 button.addEventListener("click", () => {
-
-button.addEventListener("click", () => {
     const title = titleInput.value;
     const category = categorySelect.value;
     const status = statusSelect.value;
