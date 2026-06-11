@@ -6,8 +6,8 @@ const list = document.getElementById("list");
 
 button.addEventListener("click", () => {
     const title = titleInput.value;
-const category = categorySelect.value;
-const status = statusSelect.value;
+    const category = categorySelect.value;
+    const status = statusSelect.value;
 
     if (!title) return;
 
