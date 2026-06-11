@@ -1,5 +1,6 @@
-let works = [];
-const button = document.querySelector("button");
+let works =
+    JSON.parse(localStorage.getItem("works"))
+    || [];const button = document.querySelector("button");
 const titleInput = document.getElementById("title");
 const categorySelect = document.getElementById("category");
 const statusSelect = document.getElementById("status");
