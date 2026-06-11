@@ -9,8 +9,20 @@ button.addEventListener("click", () => {
 
     if (!title) return;
 
-    const item = document.createElement("p");
-    item.textContent = `${title} (${category})`;
+    const item = document.createElement("div");
+
+    const text = document.createElement("span");
+    text.textContent = `${title} (${category}) `;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "❌";
+
+    deleteButton.addEventListener("click", () => {
+        item.remove();
+    });
+
+    item.appendChild(text);
+    item.appendChild(deleteButton);
 
     list.appendChild(item);
 
