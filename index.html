@@ -4,6 +4,7 @@
     <title>Manga Anime Game Tracker</title>
 </head>
 <body>
+
     <h1>Manga Anime Game Tracker</h1>
 
     <input id="title" placeholder="タイトル">
@@ -14,11 +15,25 @@
         <option>Game</option>
     </select>
 
+    <select id="status">
+        <option>未読</option>
+        <option>読書中</option>
+        <option>読了</option>
+        <option>積み</option>
+        <option>プレイ中</option>
+        <option>クリア</option>
+        <option>未視聴</option>
+        <option>視聴中</option>
+        <option>視聴済</option>
+    </select>
+
     <button>追加</button>
 
     <hr>
 
     <div id="list"></div>
+
     <script src="script.js"></script>
+
 </body>
 </html>
