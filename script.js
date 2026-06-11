@@ -1,3 +1,6 @@
+console.log(
+    JSON.parse(localStorage.getItem("works"))
+);
 let works =
     JSON.parse(localStorage.getItem("works"))
     || [];const button = document.querySelector("button");
